@@ -11,25 +11,8 @@
     <title>{{.Title}}</title>
   </head>
   <body>
-    <!-- ITEM INPUT -->
-    <div class="container-fluid">
-      <div class="card mb-2">
-        <div class="card-header">
-          ADD ITEM
-        </div>
-        <div class="card-body">
-          <form id="inputItem">
-            <div class="row">
-              <div class="col">
-                <input id="name" type="text" class="form-control" placeholder="Item name">
-              </div>
-              <div class="col">
-                <button id="enter" type="button" class="btn btn-primary">SUBMIT</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+    {{template "message.html" .}}
+    <script type="text/javascript" src="./static/index.js">
+    </script>
   </body>
 </html>
