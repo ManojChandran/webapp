@@ -1,0 +1,7 @@
+{
+  "PORT" : ":5000",
+  "ROOT" : "/",
+  "SHUTDOWN" : "/shutdown",
+  "STATIC" : "/static/",
+  "API_MSGS" : "/api/msgs"
+}
