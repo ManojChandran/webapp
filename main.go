@@ -46,6 +46,7 @@ func main()  {
   r.HandleFunc(conf.SHUTDOWN, api.Shutdown)
   r.HandleFunc(conf.ROOT, indexHandler)
   r.PathPrefix(conf.STATIC).Handler(http.StripPrefix(conf.STATIC, fs))
+  r.NotFoundHandler = http.HandlerFunc(notFound)
   http.Handle(conf.ROOT, r)
   log.Fatal(http.ListenAndServe(conf.PORT, nil))
 }
@@ -55,6 +56,12 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
     Title : "TITLE",
   }
   templates.ExecuteTemplate(w, "index.html", data)
+}
+
+func notFound(w http.ResponseWriter, r *http.Request){
+  w.Header().Set("Context-Type", "text/html")
+  w.WriteHeader(http.StatusNotFound)
+  fmt.Fprint(w, "<h1>Sorry, We couldn't find your page</h1>")
 }
 
 func readConfFile()  {
