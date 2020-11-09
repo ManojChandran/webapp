@@ -66,3 +66,9 @@ awstesting/integration/smoke/_test/
 # Anything under a tmp folder
 **/tmp/*
 **/exp/*
+
+.config
+notes/**
+.vscode/**
+*.swp
+.gometalinter
